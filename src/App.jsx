@@ -1,15 +1,13 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import { useGlobalContext } from "./Context";
+import ThemeToggle from "./ThemeToggle";
 
 function App() {
-  const { value } = useGlobalContext();
-
+  const { isDarkTheme } = useGlobalContext();
   return (
     <>
-      <div>{value}</div>
+      <ThemeToggle />
     </>
   );
 }
