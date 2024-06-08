@@ -4,6 +4,7 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [search, setSearch] = useState("");
 
   const toggleDarkTheme = () => {
     setIsDarkTheme(!isDarkTheme);
@@ -13,7 +14,9 @@ const AppProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={{ isDarkTheme, toggleDarkTheme }}>
+    <AppContext.Provider
+      value={{ isDarkTheme, toggleDarkTheme, search, setSearch }}
+    >
       {children}
     </AppContext.Provider>
   );
