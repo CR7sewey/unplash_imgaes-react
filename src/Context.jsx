@@ -5,7 +5,7 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("cats");
 
   const toggleDarkTheme = () => {
     setIsDarkTheme(!isDarkTheme);
@@ -14,7 +14,7 @@ const AppProvider = ({ children }) => {
     console.log(body);
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchData = async () => {
       try {
         console.log(customFetch);
@@ -25,7 +25,7 @@ const AppProvider = ({ children }) => {
       }
     };
     fetchData();
-  }, []);
+  }, []);*/
 
   return (
     <AppContext.Provider

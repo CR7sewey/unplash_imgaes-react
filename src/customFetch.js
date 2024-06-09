@@ -1,7 +1,7 @@
 import axios from "axios";
-const url = `https://api.unsplash.com/search/photos?client_id=${
-  import.meta.env.VITE_API_KEY
-}&`;
+const url = `https://api.unsplash.com/search/photos`; //?client_id=${
+// import.meta.env.VITE_API_KEY
+//}&`;
 //?client_id=${import.meta.env.VITE_API_KEY}&
 
 //https://axios-http.com/docs/req_config
