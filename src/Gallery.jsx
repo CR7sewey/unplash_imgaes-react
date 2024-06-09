@@ -7,10 +7,10 @@ const Gallery = () => {
   const { search } = useGlobalContext();
   const { data, error, isLoading, isError } = useQuery({
     // check what is returning
-    queryKey: ["images", search],
+    queryKey: ["images", search], // important bcs images string value doesnt change, so, only refetch/rerenders when search term changes
     queryFn: async () => {
       const { data } = await customFetch.get(
-        `?client_id=${"jfKlM46BMpjqLjbuNY0Gwtheq8XXvSZErQp7II9UaE8"}&query=${search}`
+        `?client_id=${import.meta.env.VITE_API_KEY}&query=${search}`
       );
       return data;
     }, // needs to return a promise
