@@ -1,4 +1,5 @@
 import { useContext, createContext, useState, useEffect } from "react";
+import customFetch from "./customFetch";
 
 const AppContext = createContext();
 
@@ -12,6 +13,19 @@ const AppProvider = ({ children }) => {
     body.classList.toggle("dark-theme", isDarkTheme);
     console.log(body);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        console.log(customFetch);
+        const data = await customFetch(`query=${"cat"}`);
+        console.log(data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <AppContext.Provider
