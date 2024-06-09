@@ -44,16 +44,19 @@ const Gallery = () => {
   }
 
   return (
-    <div>
-      {data.results.map((values) => {
-        const url = values?.urls?.regular;
+    <section className="image-container">
+      {data.results.map((item) => {
+        const url = item?.urls?.regular;
         return (
-          <div key={values.id}>
-            <img src={url} />
-          </div>
+          <img
+            src={url}
+            key={item.id}
+            alt={item.alt_description}
+            className="img"
+          ></img>
         );
       })}
-    </div>
+    </section>
   );
 };
 

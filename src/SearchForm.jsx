@@ -1,5 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "./Context";
+import { useQueryClient, useMutation } from "@tanstack/react-query";
 
 const SearchForm = () => {
   const { search, setSearch } = useGlobalContext();
@@ -7,8 +8,8 @@ const SearchForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const searchValue = e.target.elements.search.value;
-
     if (!searchValue) return;
+    setSearch(searchValue);
     console.log(searchValue);
   };
 
